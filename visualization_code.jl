@@ -19,33 +19,3 @@ function baller_graph(N, r1, r2, r3)
     plot(scatter(x=x_t, y=y_t, z=z_t, mode="markers", marker=attr(size=11, opacity=0.8), type="scatter3d"), Layout(margin=attr(l=0, r=0, b=0, t=0)))
 end
 
-function test_grapher()
-    t = range(0, stop=20, length=100)
-
-
-    plot(scatter(
-
-    x=cos.(t),
-
-    y=sin.(t),
-
-    z=t,
-
-    mode="markers",
-
-    marker=attr(
-
-        size=12,
-
-        color=t,                # set color to an array/list of desired values
-
-        colorscale="Viridis",   # choose a colorscale
-
-        opacity=0.8
-
-    ),
-
-    type="scatter3d"
-
-), Layout(margin=attr(l=0, r=0, b=0, t=0)))   
-end
