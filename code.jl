@@ -23,6 +23,10 @@ function rounder(a, b)
     end
 end
 
+function dontdivideby0(a, b)
+    return "don't do it"
+end
+
 function minmax(diction)
     max_dict = Dict()
     for key in keys(diction)
