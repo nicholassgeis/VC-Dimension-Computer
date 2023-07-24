@@ -81,3 +81,24 @@ function N_I_computer(subset, points)
         return [N_I, r_1, r_2, r_3, A_dict, B_dict, C_dict]
     end
 end
+
+function point_in_ball(point, N, r1, r2, r3)
+    condition1 = (N[1] - r1 <= point[1] <= N[1] + r1)
+    condition2 = (N[2] - r2 <= point[2] <= N[2] + r2)
+    condition3 = (point[3] in [N[3] + z + N[1]y for z in -r3:r3, y in -r2:r2])
+    return (condition1 & condition2 & condition3)
+end
+
+function big_check(lst_of_points, subset, antisubset, N, r1, r2, r3)
+    for i in subset
+        if !(point_in_ball(lst_of_points[i], N, r1, r2, r3))
+            return false
+        end
+    end
+    for j in antisubset
+        if point_in_ball(lst_of_points[j], N, r1, r2, r3)
+            return false
+        end 
+    end
+    return true
+end
